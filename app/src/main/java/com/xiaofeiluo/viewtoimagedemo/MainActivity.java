@@ -7,23 +7,28 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.widget.Button;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
     private ImageView image;
+    private Button generate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         final View view = View.inflate(this, R.layout.activity_main, null);
+        final View goods_layout = View.inflate(this, R.layout.goods_layout, null);
         setContentView(view);
         image = findViewById(R.id.image);
+        generate = findViewById(R.id.generate);
 
-        view.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+        generate.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onGlobalLayout() {
-                Bitmap bitmap = loadBitmapFromView(view);
+            public void onClick(View v) {
+
+                Bitmap bitmap = loadBitmapFromView(goods_layout);
                 image.setImageBitmap(bitmap);
             }
         });
