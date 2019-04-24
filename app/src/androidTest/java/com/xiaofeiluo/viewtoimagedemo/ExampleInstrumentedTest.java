@@ -1,4 +1,4 @@
-package com.xiaofeiluo.viewtoimage;
+package com.xiaofeiluo.viewtoimagedemo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

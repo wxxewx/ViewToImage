@@ -1,4 +1,4 @@
-package com.xiaofeiluo.viewtoimage;
+package com.xiaofeiluo.viewtoimagedemo;
 
 import org.junit.Test;
 
