@@ -1,4 +1,4 @@
-package com.xiaofeiluo.viewtoimage;
+package com.xiaofeiluo.viewtoimage.util;
 
 import android.app.Activity;
 import android.content.Context;

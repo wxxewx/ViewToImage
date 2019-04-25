@@ -1,4 +1,4 @@
-package com.xiaofeiluo.viewtoimage;
+package com.xiaofeiluo.viewtoimage.call;
 
 import android.graphics.Bitmap;
 

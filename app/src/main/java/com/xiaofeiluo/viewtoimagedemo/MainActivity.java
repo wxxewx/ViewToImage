@@ -1,18 +1,13 @@
 package com.xiaofeiluo.viewtoimagedemo;
 
 import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.xiaofeiluo.viewtoimage.IBitMapCallBack;
-import com.xiaofeiluo.viewtoimage.IViewReadyCallBack;
-import com.xiaofeiluo.viewtoimage.ScreenUtil;
+import com.xiaofeiluo.viewtoimage.call.IBitMapCallBack;
 import com.xiaofeiluo.viewtoimage.ScreenshotsHelper;
 
 public class MainActivity extends AppCompatActivity {
