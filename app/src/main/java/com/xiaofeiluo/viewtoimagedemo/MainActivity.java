@@ -10,6 +10,11 @@ import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.xiaofeiluo.viewtoimage.IBitMapCallBack;
+import com.xiaofeiluo.viewtoimage.IViewReadyCallBack;
+import com.xiaofeiluo.viewtoimage.ScreenUtil;
+import com.xiaofeiluo.viewtoimage.ScreenshotsHelper;
+
 public class MainActivity extends AppCompatActivity {
 
     private ImageView image;
@@ -27,46 +32,18 @@ public class MainActivity extends AppCompatActivity {
         generate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Bitmap bitmap = loadBitmapFromView(goods_layout);
-                image.setImageBitmap(bitmap);
+                new ScreenshotsHelper().generateImages(MainActivity.this, goods_layout, new IBitMapCallBack() {
+                    @Override
+                    public void getBitMap(Bitmap bitmap) {
+                        image.setImageBitmap(bitmap);
+                    }
+                });
             }
         });
 
     }
 
 
-    private Bitmap loadBitmapFromView(View v) {
-        int w = v.getMeasuredWidth();
-        int h = v.getMeasuredHeight();
-
-        Bitmap bmp = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
-        Canvas c = new Canvas(bmp);
-
-        c.drawColor(Color.WHITE);
-        /** 如果不设置canvas画布为白色，则生成透明 */
-
-        v.layout(0, 0, w, h);
-        v.draw(c);
-
-        return bmp;
-    }
-
-    private Bitmap loadBitmapFromView2(View v) {
-        int w = v.getMeasuredWidth();
-        int h = v.getMeasuredHeight();
-
-        Bitmap bmp = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
-        Canvas c = new Canvas(bmp);
-
-        c.drawColor(Color.WHITE);
-        /** 如果不设置canvas画布为白色，则生成透明 */
-
-        v.layout(0, 0, w, h);
-        v.draw(c);
-
-        return bmp;
-    }
 }
 
 
