@@ -31,11 +31,6 @@ public class StubFragment extends Fragment {
         return view;
     }
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-    }
-
     public void setView(View view) {
         this.view = view;
     }
